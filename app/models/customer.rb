@@ -19,13 +19,13 @@ class Customer
 
   def self.find_by_name(name)
     Customer.all.find do |customer|
-      name == customer.full_name
+      name.downcase == customer.full_name.downcase
     end
   end
 
   def self.find_all_by_first_name(first_name)
     Customer.all.select do |customer|
-      customer.first_name == first_name
+      customer.first_name.downcase == first_name.downcase
     end
   end
 
