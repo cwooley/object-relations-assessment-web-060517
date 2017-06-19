@@ -12,7 +12,7 @@ class Restaurant
 
   def self.find_by_name(name)
     self.all.find do |restaurant|
-      restaurant.name = name
+      restaurant.name.downcase == name.downcase
     end
   end
 
