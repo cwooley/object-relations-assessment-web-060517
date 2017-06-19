@@ -24,7 +24,7 @@ class Customer
   end
 
   def self.find_all_by_first_name(first_name)
-    Customer.select do |customer|
+    Customer.all.select do |customer|
       customer.first_name == first_name
     end
   end
