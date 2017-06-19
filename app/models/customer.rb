@@ -39,4 +39,16 @@ class Customer
     review = Review.new(self, restaurant, content)
   end
 
+  def reviews
+    Review.all.select do |review|
+      review.customer == self
+    end
+  end
+
+  def reviewed_restaurants
+    self.reviews.map do |review|
+      review.restaurant
+    end
+  end
+
 end
